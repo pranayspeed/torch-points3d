@@ -590,7 +590,6 @@ class Res16UNet34C(Res16UNet34):
 
 
 class STRes16UNetBase(Res16UNetBase):
-
     CONV_TYPE = ConvType.SPATIAL_HYPERCUBE_TEMPORAL_HYPERCROSS
 
     def __init__(self, in_channels, out_channels, config, D=4, **kwargs):

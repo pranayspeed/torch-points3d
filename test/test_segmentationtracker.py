@@ -114,7 +114,6 @@ class TestSegmentationTracker(unittest.TestCase):
             tracker.track(model)
 
     def test_seg_full_res_helpers(self):
-
         raw_pos = torch.from_numpy(np.asarray([[0, 0, 0], [0, 0.5, 0], [0.5, 1, 0], [1, 1, 0]]))
         raw_y = torch.from_numpy(np.asarray([0, 0, 1, 1]))
         preds = torch.from_numpy(np.asarray([[1, 0], [1, 0], [0, 1], [0, 1]]))

@@ -26,7 +26,6 @@ class RandlaKernel(MessagePassing):
         return x
 
     def message(self, x_j, pos_i, pos_j):
-
         if x_j is None:
             x_j = pos_j
 

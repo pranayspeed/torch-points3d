@@ -186,7 +186,6 @@ class Trainer:
                 log.info("Learning rate = %f" % self._model.learning_rate)
 
     def _train_epoch(self, epoch: int):
-
         self._model.train()
         self._tracker.reset("train")
         self._visualizer.reset(epoch, "train")

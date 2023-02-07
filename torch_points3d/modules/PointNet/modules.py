@@ -93,7 +93,6 @@ class PointNetSeg(torch.nn.Module):
             return x.max(1)[0]
 
     def forward(self, x, batch):
-
         # apply pointnet classification network to get per-point
         # features and global feature
         x = self.input_stn(x, batch)

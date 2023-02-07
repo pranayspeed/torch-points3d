@@ -12,7 +12,6 @@ from torch_points3d.datasets.samplers import BalancedRandomSampler
 
 class TestBalancedRandomSampler(unittest.TestCase):
     def test_simple(self):
-
         num_classes = 10
         num_samples = 10000
 

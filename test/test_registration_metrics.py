@@ -20,7 +20,6 @@ from torch_points3d.utils.geometry import euler_angles_to_rotation_matrix
 
 class TestRegistrationMetrics(unittest.TestCase):
     def test_estimate_transfo(self):
-
         a = torch.randn(100, 3)
 
         R_gt = euler_angles_to_rotation_matrix(torch.rand(3) * np.pi)
@@ -81,7 +80,6 @@ class TestRegistrationMetrics(unittest.TestCase):
         self.assertAlmostEqual(hit.item(), 0.9)
 
     def test_compute_transfo_error(self):
-
         axis = torch.randn(3)
         axis = axis / torch.norm(axis)
         theta = 30 * np.pi / 180
@@ -97,7 +95,6 @@ class TestRegistrationMetrics(unittest.TestCase):
         npt.assert_allclose(rre.item(), 30, rtol=1e-3)
 
     def test_compute_scaled_registration_error(self):
-
         xyz = torch.tensor(
             [
                 [1.0, 0.0, 0.0],

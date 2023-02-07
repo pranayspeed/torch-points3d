@@ -22,7 +22,6 @@ class Minkowski_Baseline_Model(BaseModel):
         self.loss_names = ["loss_seg"]
 
     def set_input(self, data, device):
-
         self.batch_idx = data.batch.squeeze()
         coords = torch.cat([data.batch.unsqueeze(-1).int(), data.coords.int()], -1)
         self.input = ME.SparseTensor(features=data.x, coordinates=coords, device=device)

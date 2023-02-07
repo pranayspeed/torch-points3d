@@ -60,7 +60,6 @@ class PointNet2Factory(ModelFactory):
 
 
 class BasePointnet2(UnwrappedUnetBasedModel):
-
     CONV_TYPE = "dense"
 
     def __init__(self, model_config, model_type, dataset, modules, *args, **kwargs):

@@ -11,7 +11,6 @@ from torch_geometric.nn import knn
 
 
 def get_matches(feat_source, feat_target, sym=False):
-
     matches = knn(feat_target, feat_source, k=1).T
     if sym:
         match_inv = knn(feat_source, feat_target, k=1).T

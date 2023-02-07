@@ -108,7 +108,6 @@ def kernel_point_optimization_debug(
     saved_gradient_norms = np.zeros((10000, num_kernels))
     old_gradient_norms = np.zeros((num_kernels, num_points))
     for iter in range(10000):
-
         # Compute gradients
         # *****************
 
@@ -187,7 +186,6 @@ def kernel_point_optimization_debug(
 
 
 def load_kernels(radius, num_kpoints, num_kernels, dimension, fixed):
-
     # Number of tries in the optimization process, to ensure we get the most stable disposition
     num_tries = 100
 
@@ -206,7 +204,6 @@ def load_kernels(radius, num_kpoints, num_kernels, dimension, fixed):
 
     # Check if already done
     if not exists(kernel_file):
-
         # Create kernels
         kernel_points, grad_norms = kernel_point_optimization_debug(
             1.0,
@@ -234,7 +231,6 @@ def load_kernels(radius, num_kpoints, num_kernels, dimension, fixed):
 
     # Random rotations depending of the fixed points
     if fixed == "verticals":
-
         # Create random rotations
         thetas = np.random.rand(num_kernels) * 2 * np.pi
         c, s = np.cos(thetas), np.sin(thetas)
@@ -252,7 +248,6 @@ def load_kernels(radius, num_kpoints, num_kernels, dimension, fixed):
         kernels = np.matmul(original_kernel, R)
 
     else:
-
         # Create random rotations
         u = np.ones((num_kernels, 3))
         v = np.ones((num_kernels, 3))

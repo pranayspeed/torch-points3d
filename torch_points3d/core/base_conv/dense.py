@@ -73,7 +73,6 @@ class BaseDenseConvolutionDown(BaseConvolution):
 
 
 class BaseDenseConvolutionUp(BaseConvolution):
-
     CONV_TYPE = ConvolutionFormat.DENSE.value
 
     def __init__(self, neighbour_finder, *args, **kwargs):

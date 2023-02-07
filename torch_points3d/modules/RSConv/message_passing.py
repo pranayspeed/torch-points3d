@@ -28,7 +28,6 @@ class Convolution(MessagePassing):
         return self.propagate(edge_index, x=x, pos=pos)
 
     def message(self, pos_i, pos_j, x_j):
-
         if x_j is None:
             x_j = pos_j
 

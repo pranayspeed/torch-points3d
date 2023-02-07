@@ -30,7 +30,6 @@ def download_file(url, out_file):
 
 
 class PretainedRegistry(object):
-
     MODELS = {
         "pointnet2_largemsg-s3dis-1": "https://api.wandb.ai/files/loicland/benchmark-torch-points-3d-s3dis/1e1p0csk/pointnet2_largemsg.pt",
         "pointnet2_largemsg-s3dis-2": "https://api.wandb.ai/files/loicland/benchmark-torch-points-3d-s3dis/2i499g2e/pointnet2_largemsg.pt",

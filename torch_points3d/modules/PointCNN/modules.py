@@ -118,7 +118,6 @@ class XConv(torch.nn.Module):
         reset(self.conv)
 
     def forward(self, x, pos, edge_index):
-
         # posTo = the points that will be centers of convolutions
         # posFrom = points that have edges to the centers of convolutions
         # For a down conv, posFrom = pos, posTo = pos[idx]

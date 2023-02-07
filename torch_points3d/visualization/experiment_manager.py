@@ -13,7 +13,6 @@ def colored_print(color, msg):
 
 
 class ExperimentFolder:
-
     POS_KEYS = ["x", "y", "z"]
 
     def __init__(self, run_path):

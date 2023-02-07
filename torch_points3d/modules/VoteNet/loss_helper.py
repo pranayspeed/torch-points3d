@@ -209,7 +209,6 @@ def compute_box_and_sem_cls_loss(inputs, outputs, loss_params, weight_classes=No
 
 
 def to_dense_labels(data):
-
     if data.batch is not None:
         batch_size = len(torch.unique(data.batch))
     else:

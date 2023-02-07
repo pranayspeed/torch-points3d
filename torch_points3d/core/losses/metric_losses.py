@@ -113,7 +113,6 @@ class ContrastiveHardestNegativeLoss(nn.Module):
         return pos_loss.mean(), (neg_loss0.mean() + neg_loss1.mean()) / 2
 
     def forward(self, F0, F1, matches, xyz0=None, xyz1=None):
-
         pos_loss, neg_loss = self.contrastive_hardest_negative_loss(F0, F1, matches.detach().cpu())
 
         return pos_loss + neg_loss
@@ -140,7 +139,6 @@ class BatchHardContrastiveLoss(nn.Module):
         self.min_dist = min_dist
 
     def forward(self, F0, F1, positive_pairs, xyz0=None, xyz1=None):
-
         posF0 = F0[positive_pairs[:, 0]]
         posF1 = F1[positive_pairs[:, 1]]
 

@@ -22,7 +22,6 @@ def copy_from_to(data, batch):
 
 
 class BasePartialDenseConvolutionDown(BaseConvolution):
-
     CONV_TYPE = ConvolutionFormat.PARTIAL_DENSE.value
 
     def __init__(self, sampler, neighbour_finder, *args, **kwargs):

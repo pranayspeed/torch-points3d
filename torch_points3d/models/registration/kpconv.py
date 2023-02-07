@@ -35,15 +35,12 @@ class PatchKPConv(BackboneBasedModel):
     """
 
     def __init__(self, option, model_type, dataset, modules):
-
         BackboneBasedModel.__init__(self, option, model_type, dataset, modules)
         self.set_last_mlp(option.mlp_cls)
         self.loss_names = ["loss_reg", "loss", "internal"]
 
     def set_last_mlp(self, last_mlp_opt):
-
         if len(last_mlp_opt.nn) > 2:
-
             self.FC_layer = MLP(last_mlp_opt.nn[: len(last_mlp_opt.nn) - 1])
             self.FC_layer.add_module("last", Lin(last_mlp_opt.nn[-2], last_mlp_opt.nn[-1]))
         elif len(last_mlp_opt.nn) == 2:
@@ -87,7 +84,6 @@ class PatchKPConv(BackboneBasedModel):
         return F.normalize(output, p=2, dim=1)
 
     def forward(self, *args, **kwargs) -> Any:
-
         self.output = self.apply_nn(self.input, self.pre_computed, self.batch_idx)
         if self.labels is None:
             return self.output

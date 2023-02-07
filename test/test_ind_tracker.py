@@ -16,7 +16,6 @@ from torch_points3d.datasets.registration.utils import tracked_matches
 
 class TestTrackedMatches(unittest.TestCase):
     def test_simple(self):
-
         ind_source = torch.tensor([1, 2, 5])
         ind_target = torch.tensor([0, 5, 6])
         data_s = Data(pos=torch.randn(3, 3), origin_id=ind_source)

@@ -253,7 +253,6 @@ class Res2BlockDown(ME.MinkowskiNetwork):
         self.block = get_block(block_norm_type, down_conv_nn[1], down_conv_nn[1], bn_momentum=bn_momentum, D=dimension)
 
     def forward(self, x):
-
         out_s = self.conv(x)
         out_s = self.norm(out_s)
         out = self.block(out_s)

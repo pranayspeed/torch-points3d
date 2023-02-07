@@ -124,7 +124,6 @@ class BaseResBlock(nn.Module):
         dimension=-1,
         **kwargs
     ):
-
         super(BaseResBlock, self).__init__()
         assert dimension > 0
 
@@ -141,7 +140,6 @@ class BaseResBlock(nn.Module):
         for conv_dim, kernel_size, stride, dilation, has_bias, kernel_generator in zip(
             convolutions_dim, kernel_sizes, strides, dilations, has_biases, kernel_generators
         ):
-
             modules.append(
                 ME.MinkowskiConvolution(
                     conv_dim[0],
@@ -190,7 +188,6 @@ class ResnetBlockDown(BaseResBlock):
         down_stride=2,
         **kwargs
     ):
-
         super(ResnetBlockDown, self).__init__(
             down_conv_nn[0],
             down_conv_nn[1],
@@ -215,7 +212,6 @@ class ResnetBlockDown(BaseResBlock):
         )
 
     def forward(self, x):
-
         residual, x = super().forward(x)
 
         return self.downsample(residual) + x
@@ -239,7 +235,6 @@ class ResnetBlockUp(BaseResBlock):
         skip=True,
         **kwargs
     ):
-
         self.skip = skip
 
         super(ResnetBlockUp, self).__init__(

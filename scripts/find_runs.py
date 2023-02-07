@@ -67,7 +67,6 @@ class ExperimentFolder:
 
 
 def main(args):
-
     experiment_with_models = defaultdict(list)
     run_paths = glob(os.path.join(ROOT, "outputs", "*", "*"))
     for run_path in run_paths:

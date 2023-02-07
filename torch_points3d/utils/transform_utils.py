@@ -2,12 +2,10 @@ import numpy as np
 
 
 class SamplingStrategy(object):
-
     STRATEGIES = ["random", "freq_class_based"]
     CLASS_WEIGHT_METHODS = ["sqrt"]
 
     def __init__(self, strategy="random", class_weight_method="sqrt"):
-
         if strategy.lower() in self.STRATEGIES:
             self._strategy = strategy.lower()
 
@@ -15,7 +13,6 @@ class SamplingStrategy(object):
             self._class_weight_method = class_weight_method.lower()
 
     def __call__(self, data):
-
         if self._strategy == "random":
             random_center = np.random.randint(0, len(data.pos))
 

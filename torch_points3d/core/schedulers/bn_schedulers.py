@@ -59,7 +59,6 @@ class BNMomentumScheduler(object):
         self._scheduler_opt = scheduler_opt
 
     def step(self, epoch=None):
-
         if epoch is None:
             epoch = self.last_epoch + 1
 

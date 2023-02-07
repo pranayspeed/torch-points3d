@@ -46,7 +46,6 @@ class Checkpoint:
         to_save = kwargs
         for key, value in self.__dict__.items():
             if not key.startswith("_"):
-
                 to_save[key] = value
         torch.save(to_save, self.path)
 

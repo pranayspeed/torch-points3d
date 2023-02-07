@@ -15,7 +15,6 @@ from torch_points3d.modules.PointNet.modules import PointNetSTN3D
 
 
 class TestPointnetModules(unittest.TestCase):
-
     # test that stn forward works and is initialised with the identity
     def test_stn(self):
         pos = torch.tensor([[1, 1, 2], [-1, 0, 1], [10, 12, 13], [-18, 15, 16]]).to(torch.float32)
@@ -60,7 +59,6 @@ class TestInternalLosses(unittest.TestCase):
         self.model = MockModel()
 
     def test_get_named_internal_losses(self):
-
         d = defaultdict(list)
         d["mock_loss_1"].append(torch.tensor(0.5))
         d["mock_loss_2"].append(torch.tensor(0.3))
@@ -70,7 +68,6 @@ class TestInternalLosses(unittest.TestCase):
         self.assertEqual(lossDict, d)
 
     def test_get_internal_loss(self):
-
         loss = self.model.get_internal_loss()
         self.assertAlmostEqual(loss.item(), 0.6)
 

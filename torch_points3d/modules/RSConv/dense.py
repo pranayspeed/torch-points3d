@@ -234,7 +234,6 @@ class OriginalRSConv(nn.Module):
         self.activation = activation
 
     def forward(self, input):  # input: (B, 3 + 3 + C_in, npoint, centroid + nsample)
-
         x = input[:, 3:, :, :]  # (B, C_in, npoint, nsample+1), input features
         nsample = x.size()[3]
         abs_coord = input[:, 0:3, :, :]  # (B, 3, npoint, nsample+1), absolute coordinates

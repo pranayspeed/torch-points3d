@@ -72,7 +72,6 @@ class SparseConv3D(FragmentBaseModel):
             return self.input
 
     def apply_nn(self, input):
-
         out_feat = self.backbone(input).x
         out_feat = self.FC_layer(out_feat)
         if self.normalize_feature:

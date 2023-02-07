@@ -118,7 +118,6 @@ class Testhelpers(unittest.TestCase):
         self.assertEqual(upsample[1].__inc__("y_idx", 0), pos.shape[0])
 
     def test_AddFeatByKey(self):
-
         add_to_x = [False, True]
         feat_name = ["y", "none"]
         strict = [False, True]
@@ -222,7 +221,6 @@ class Testhelpers(unittest.TestCase):
         npt.assert_allclose(np.abs(data.eigenvectors[:, 0].dot(norm).item()), 1.0, atol=1e-5)
 
     def test_Random3AxisRotation(self):
-
         pos = np.asarray([[1, 0, 0], [0, 1, 0], [0, 0, 1]]).astype(np.float)
         data = Data(pos=torch.from_numpy(pos).float())
         t = Random3AxisRotation(apply_rotation=True, rot_x=0, rot_y=0, rot_z=180)
@@ -252,7 +250,6 @@ class Testhelpers(unittest.TestCase):
         self.assertEqual(t(data.clone()).pos.shape, torch.Size([4, 3]))
 
     def test_RandomCoordsFlip(self):
-
         coords = torch.from_numpy(np.asarray([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
         pos_target = torch.from_numpy(np.asarray([[6, 2, 3], [3, 5, 6], [0, 8, 9]]))
         data = Data(coords=coords)
@@ -265,7 +262,6 @@ class Testhelpers(unittest.TestCase):
         self.assertEqual(np.array_equal(pos_out, pos_target), True)
 
     def test_XYZFeature(self):
-
         pos = torch.from_numpy(np.asarray([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
         data = Data(pos=pos)

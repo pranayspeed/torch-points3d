@@ -23,7 +23,6 @@ def get_lr(optimizer):
 
 class TestLrScheduler(unittest.TestCase):
     def test_update_scheduler_on_epoch(self):
-
         base_lr = 0.1
         gamma = 0.9
         conf = os.path.join(DIR, "test_config/lr_scheduler.yaml")

@@ -55,7 +55,6 @@ class MS_SparseConvModel(APIModel):
         self.loss_names = ["loss_seg"]
 
     def apply_nn(self, input):
-
         outputs = []
         for i in range(len(self.grid_size)):
             self.unet.set_grid_size(self.grid_size[i])

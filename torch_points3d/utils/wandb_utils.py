@@ -5,7 +5,6 @@ import subprocess
 
 class WandbUrls:
     def __init__(self, url):
-
         hash = url.split("/")[-2]
         project = url.split("/")[-3]
         entity = url.split("/")[-4]

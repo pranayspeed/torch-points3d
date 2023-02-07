@@ -13,7 +13,6 @@ from torch_points3d.metrics.registration_tracker import FragmentRegistrationTrac
 
 
 def rand_T():
-
     t = torch.randn(3)
     axis = torch.randn(3)
     theta = torch.norm(axis)

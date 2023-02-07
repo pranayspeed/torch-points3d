@@ -265,7 +265,6 @@ class MS_SparseConv3d_Shared(BaseMS_SparseConv3d):
 
 class MS_SparseConv3d_Shared_Pool(MS_SparseConv3d_Shared):
     def __init__(self, option, model_type, dataset, modules):
-
         MS_SparseConv3d_Shared.__init__(self, option, model_type, dataset, modules)
         self.pool_mode = option.pool_mode
 

@@ -33,7 +33,6 @@ class PatchPointNet2_D(BackboneBasedModel):
         self.loss_names = ["loss_reg", "loss", "internal"]
 
     def set_last_mlp(self, last_mlp_opt):
-
         if len(last_mlp_opt.nn) > 2:
             self.FC_layer = MLP(last_mlp_opt.nn[: len(last_mlp_opt.nn) - 1])
             self.FC_layer.add_module("last", Lin(last_mlp_opt.nn[-2], last_mlp_opt.nn[-1]))
@@ -99,7 +98,6 @@ class PatchPointNet2_D(BackboneBasedModel):
 
 
 class FragmentPointNet2_D(UnetBasedModel, FragmentBaseModel):
-
     r"""
     PointNet2 with multi-scale grouping
     descriptors network for registration that uses feature propogation layers

@@ -32,7 +32,6 @@ def resolve(obj, constants):
 
     # recursively resolve all children of obj
     for k in it:
-
         # if obj[k] is a primative type, evalulate it
         if resolve(obj[k], constants):
             if type(obj[k]) is str:

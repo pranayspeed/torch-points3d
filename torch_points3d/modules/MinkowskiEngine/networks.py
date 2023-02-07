@@ -19,7 +19,6 @@ class ResNetBase(nn.Module):
         self.weight_initialization()
 
     def network_initialization(self, in_channels, out_channels, D):
-
         self.inplanes = self.INIT_DIM
         self.conv1 = ME.MinkowskiConvolution(in_channels, self.inplanes, kernel_size=5, stride=2, dimension=D)
 

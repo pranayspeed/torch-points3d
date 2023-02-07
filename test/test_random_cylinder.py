@@ -13,7 +13,6 @@ from torch_points3d.core.data_transform.transforms import CylinderSampling
 
 class TestRandomCylinder(unittest.TestCase):
     def setUp(self):
-
         pos = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 0], [0, 0, 1], [1, 1, 1], [0, 1, 1]])
         labels = np.array([0, 0, 0, 0, 0, 0])
 

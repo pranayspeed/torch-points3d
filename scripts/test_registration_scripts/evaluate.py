@@ -143,7 +143,6 @@ def compute_metrics(
 
 
 def run(model: BaseModel, dataset: BaseDataset, device, cfg):
-
     reg_thresh = cfg.data.registration_recall_thresh
     if reg_thresh is None:
         reg_thresh = 0.2
