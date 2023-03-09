@@ -1,0 +1,41 @@
+# @package data
+class: bagsfit.BagsfitDataset
+dataset_name: "Bagsfit"
+task: segmentation
+dataroot: /home/pranayspeed/Work/git_repo/datasets
+grid_size: 0.1
+process_workers: 8
+apply_rotation: True
+mode: "last"
+use_category: False
+
+train_transform:
+  - transform: ElasticDistortion
+  - transform: Random3AxisRotation
+    params:
+      apply_rotation: True
+      rot_x: 2
+      rot_y: 2
+      rot_z: 180
+  - transform: RandomScaleAnisotropic
+    params:
+      scales: [0.9, 1.1]
+  - transform: GridSampling3D
+    params:
+      size: 0.1
+      quantize_coords: True
+      mode: "last"
+
+val_transform:
+  - transform: GridSampling3D
+    params:
+      size: 0.1
+      quantize_coords: True
+      mode: "last"
+
+test_transform:
+  - transform: GridSampling3D
+    params:
+      size: 0.1
+      quantize_coords: True
+      mode: "last"

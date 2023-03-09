@@ -352,7 +352,7 @@ class Trainer:
                 if self._cfg.training.cuda > -1
                 else [torch.profiler.ProfilerActivity.CPU],
                 schedule=torch.profiler.schedule(
-                    skip_first=getattr(self._cfg.training.tensorboard.pytorch_profiler, "skip_first", 10),
+                    #skip_first=getattr(self._cfg.training.tensorboard.pytorch_profiler, "skip_first", 10),
                     wait=getattr(self._cfg.training.tensorboard.pytorch_profiler, "wait", 5),
                     warmup=getattr(self._cfg.training.tensorboard.pytorch_profiler, "warmup", 3),
                     active=getattr(self._cfg.training.tensorboard.pytorch_profiler, "active", 5),
